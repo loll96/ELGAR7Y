@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{%load static%}
+{%block body%} 
+      <!-- Start  BreadCrumbs For All Pages Change Image  -->
+        
+      <section class="hero-wrap breadcrumb-contact hero-wrap-2" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <!-- <div class="col-md-8 ftco-animate text-center mydesc-text-overlay-mb">
+              <h3 class="sub-title"> تواصل معي  </h3>
+              <h1 class="mb-3 bread">الآن يمكنك التواصل مع الجارحي  </h1>
+              <p class="desc mt-4"> صوتك هيوصل يمكنك التواصل مع الجارحي الان من خلال موقعه الالكتروني بسهولة ويسر وسيقوم الجارحي بالرد على كل استفساراتكم ومشاكلكم   </p>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+    <!-- End  BreadCrumbs For All Pages Change Image  -->
+    
+
+     <!-- Start Contact Me -->
+     
+   	<section class="ftco-section contact-section" id="FAQs">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 text-center heading-section-about ftco-animate">
+					<!-- <span class="subheading">صوتك هيوصل</span> -->
+					<span class="subheading">تواصل معي</span>
+          <h2 class="mb-4" > الآن يمكنكم التواصل مع محمد الجارحي </h2>
+          <p class="mb-5">  يمكنك التواصل مع محمد الجارحي الان من خلال موقعه الالكتروني بسهولة ويسر وسيقوم محمد الجارحي بالرد على كل استفساراتكم ومشاكلكم <span class="garhy-q">"يسعدني تواصلكم معي واستقبال استفساراتكم في أي وقت وسأبذل قصارى جهدي لمساعدتكم وايصال أصواتكم"</span>  </p>
+          </div>
+        </div>
+        <div class="row  d-flex justify-content-around" >
+          <!-- Contact Form -->
+            <div class="col-12">
+              <div class="wrap-contact100-form mb-80">
+                  <form action="#" method="POST">
+                    {%csrf_token%}
+                      <div class="row">
+                          <div class="col-md-6" style="display: inline-block;">
+                            <div class="form-group">
+                                <input class="input100 form-control mb-30" type="text" name="nickname"
+                                    placeholder="اللقب   " required>
+
+                            </div>
+                          </div>
+                          <div class="col-md-6" style="display: inline-block;">
+                            <div class="form-group">
+                                <input class="form-control mb-30" type="text" name="firstname"
+                                    placeholder="الاسم " required>
+                            </div>
+                         </div>
+                         <div class="col-md-6" style="display: inline-block;">
+                          <div class="form-group">
+                              <input class="input100 form-control mb-30" type="email" name="email"
+                                  placeholder="البريد الالكتروني" required>
+
+                          </div>
+                      </div>                       
+                          <div class="col-md-6" style="display: inline-block;">
+                              <div class="form-group">
+                                  <input class="input100 form-control mb-30" type="text" name="address"
+                                      placeholder="العنوان ">
+                              </div>
+                          </div>
+                          <div class="col-md-6" style="display: inline-block;">
+                              <div class="form-group">
+                                  <input class="input100 form-control mb-30" type="tel" name="phonenumber"
+                                      placeholder="رقم التليفون " required>
+
+                              </div>
+                          </div>
+                          <div class="col-md-6" style="display: inline-block;">
+                            <div class="form-group">
+                                <input class="input100 form-control mb-30" type="text" name="subjct"
+                                    placeholder="موضوع الرسالة " required>
+
+                            </div>
+                        </div>
+                          
+
+                          <div class="col-md-6 " style="display: inline-block;">
+                            <div class="form-group form-control">
+                                <span class="icoon-contactform"></span>
+                                <select class="mb-30 js-select2" name="whatq">
+                                    <option>نوع الاستفسار  </option>
+                                    <option>اقتصادي</option>
+                                    <option>سياسي </option>
+                                    <option>رياضي</option>
+                                    <option>تواصل </option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+
+                            </div>
+                        </div>
+
+                          <div class="col-md-6 " style="display: inline-block;">
+                              <div class="form-group form-control">
+                                  <span class="icoon-contactform"></span>
+                                  <select class="mb-30 js-select2" name="what">
+                                      <option>سبب التواصل</option>
+                                      <option>استثمارات</option>
+                                      <option>انشاءات</option>
+                                      <option>تنمية وتطوير </option>
+                                      <option>غير ذلك</option>
+                                  </select>
+                                  <div class="dropDownSelect2"></div>
+
+                              </div>
+                          </div>
+                          <div class="col-md-12" style="display: inline-block;">
+                              <div class="form-group">
+                                  <textarea class="input100 form-control mb-30" style="border-radius: 40px;"
+                                      name="message" placeholder="يرجى كتابة رسالتك أو استفساركم "></textarea>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container-contact100-form-btn ">
+                          <button class="contact100-form-btn">
+                              <span>
+                                  <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                                  إرسال 
+                              </span>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+            </div>
+            
+
+        </div>
+        <div id="dropDownSelect1"></div>
+       
+      </div>
+    </section>
+
+     <!-- End Contact Me -->
+     {%endblock%}
+
+

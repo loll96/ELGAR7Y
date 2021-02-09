@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{%load static%}
+{%block body%} 
+   
+<!-- Start  BreadCrumbs For All Pages Change Image  -->
+		<section class="hero-wrap breadcrumb-awards hero-wrap-2" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<!-- <div class="col-md-8 ftco-animate text-center mydesc-text-overlay-mb">
+				<h3 class="sub-title">الجوائز    </h3>
+				<h1 class="mb-3 bread">الجارحي يحصل على جائزة أفضل شخصية مؤثرة لهذا العام      </h1>
+				<p class="desc mt-4">  اُنتخب الجارحي عضوا بمجلس إدارة غرفة الصناعات المعدنية باتحاد الصناعات المصري، وكان ممثلاً لمصر في العديد من الفعاليات الدولية كمؤتمر العمل الدولي بجنيف عام 2017 ممثلاً عن قطاع الأعمال </p>
+				</div> -->
+			</div>
+			</div>
+		</section>
+		<!-- End  BreadCrumbs For All Pages Change Image  -->
+
+		<!-- Start Section Awards  -->
+
+		<section class="ftco-section justify-content-center all-awards" id="awards">
+			<div class="container">
+			  <div class="col-md-12 text-center heading-section ftco-animate">
+				<span class="subheading">الجوائز والتقديرات  </span>
+				<h2 class="mb-3"  >الجوائز التي نالها الجارحي </h2>
+           		<p class="text-center " style="margin-bottom: 40px;">وتتويجاً لكل تلك النجاحات، استحق بجدارة جائزة (Business Today) لأكثر ٥٠ شخصية مؤثرة في الاقتصاد المصري خلال عام ٢٠١٨. ونالت مجموعة "الجارحي" معه جائزتين من صندوق تحيا مصر لمساهمتها الفاعلة في المشروع القومي للقضاء على العشوائيات، ومساندة الدولة في حماية المواطنين من خطر "فيروس سي".</p>
+			  </div>
+			  <div class="row d-flex">
+				{%for award in awards%}
+					{% if forloop.counter0|divisibleby:2 %}
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 justify-content-center d-flex ftco-animate mb-5">
+						<div class=" row award-entry1 justify-content-end">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+								<img class="block-award1" src="{{award.img.url}}">
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+								<div class="text p-4 heading-awards  d-block">
+									<h2>{{award.title}}  </h2>
+									<span class="award-date">{{award.time|date:"F d, Y"}} </span>
+									
+									<p>{{award.content}} </p>
+
+									<div class=" mt-4 text-center">
+									<a href="{% url 'garhy:awardsdetails' award.id %}" class="btn btn-awards">اقرأ أكثر </a>
+									</div>
+								</div>
+							</div>
+						
+						</div>
+						</div>
+					{%else%}
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 justify-content-center d-flex ftco-animate mb-5">
+							<div class=" row award-entry2 justify-content-end">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 awards-content-1">
+									<div class="text p-4 heading-awards  d-block">
+										<h2>{{award.title}}</h2>
+										<span class="award-date">{{award.time|date:"F d, Y"}}</span>
+										<p>{{award.content}}</p>
+		
+										
+										<div class=" mt-4 text-center">
+										<a href="{% url 'garhy:awardsdetails' award.id %}" class="btn btn-awards">اقرأ أكثر </a>
+										</div>
+										</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<img class="block-award2" src="{{award.img.url}}">
+								</div>
+							</div>
+						</div>
+					{%endif%}
+				{%endfor%}
+			  </div>
+			  <!-- if there more awards put it in more pages -->
+			  <!-- <div class="row mt-5">
+				<div class="col text-center">
+				  <div class="block-27" style="direction: ltr;" >
+					<ul>
+					  <li><a href="#">&lt;</a></li>
+					  <li class="active"><span>1</span></li>
+					  <li><a href="#">2</a></li>
+					  <li><a href="#">&gt;</a></li>
+					</ul>
+				  </div>
+				</div>
+			  </div> -->
+			</div>
+		</section>
+		<!-- End Section Awards  -->
+
+	
+		<!-- More Other Awards  -->
+		<section class="ftco-section" id="moreAwards">
+			<div class="container">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center heading-section ftco-animate">
+					<span class="subheading">جوائز أخرى  </span>
+					<h2 class="mb-3"  >الجوائز التي نالها الجارحي </h2>
+				<p class="text-center " style="margin-bottom: 40px;">وتتويجاً لكل تلك النجاحات، استحق بجدارة جائزة (Business Today) لأكثر ٥٠ شخصية مؤثرة في الاقتصاد المصري خلال عام ٢٠١٨. ونالت مجموعة "الجارحي" معه جائزتين من صندوق تحيا مصر لمساهمتها الفاعلة في المشروع القومي للقضاء على العشوائيات، ومساندة الدولة في حماية المواطنين من خطر "فيروس سي".</p>
+				  </div>
+				<div class="row d-flex justify-content-center">
+					{%for award in awards%}
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 text-center">
+							<div class="practice-area ftco-animate">
+								<div class="icon d-flex justify-content-center align-items-center" >
+									<span class="flaticon-shield"></span>
+								</div>
+								<h3><a href="{% url 'garhy:awardsdetails' award.id %}">{{award.title}} </a></h3>
+								<p>{{award.df}}</p>
+								<a href="{% url 'garhy:awardsdetails' award.id %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
+							</div>
+						</div>
+					{%endfor%}
+				</div>
+			</div>
+		</section>
+		<!-- End More Other Awards  -->
+
+{%endblock%}
+
+

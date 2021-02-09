@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{%load static%}
+{%block body%} 
+        <!-- Start  BreadCrumbs For All Pages Change Image  -->
+    
+    <section class="hero-wrap breadcrumb-media hero-wrap-2 "  data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <!-- <div class="col-md-8 ftco-animate text-center mydesc-text-overlay-mb">
+            <h3 class="sub-title">أخبار وفعاليات الجارحي  </h3>
+            <h1 class="mb-3 bread">تابع آخر الأخبار والفعاليات المهمة والجديدة    </h1>
+            <p class="desc mt-4">  يمكنك الآن متابعة جميع أخبار وفعاليات الجارحي المهمة على الصعيد السياسي والاقتصادي وأعماله الهامة من خلال موقعة الرسمي </p>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+  <!-- End  BreadCrumbs For All Pages Change Image  -->
+
+
+  <!-- Start All News  -->
+
+    <section class="ftco-section all-news" id="newsSection">
+      <div class="container">
+        <div class="col-md-12 text-center heading-section ftco-animate">
+          <span class="subheading">أهم الأخبار </span>
+          <h2 class="mb-3"  >أخبار الجارحي </h2>
+          <p class="text-center " style="margin-bottom: 50px;"> تابع أخبار الجارحي المهمة الان على موقعه الالكتروني </p>
+        </div>
+        <div class="row d-flex">
+          {%for n in news%}
+          <div class="col-lg-4 col-md-6 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+            <img class="block-20" src="{{n.img.url}}">
+            <div class="text p-4 heading-news float-right d-block">
+              <h2>{{n.title}} </h2>
+              <span class="date"> {{n.time|date:"M d, Y"}} </span>
+              <p>{{n.content}} </p>
+              <div class="text-center mt-4">
+              <a href="{% url 'garhy:newsdetails' n.id%}" class="btn btn-news">اقرأ أكثر </a>
+              </div>
+            </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+        <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27" style="direction: ltr;" >
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End All News  -->
+
+    <!-- Start Media  -->
+	<section class="ftco-section all-media" style="direction: ltr;" id="mediaSection">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+				<div class="col-lg-10 col-md-10 text-center heading-section ftco-animate">
+					<span class="subheading">ميديا</span>
+					<h2 class="mb-4">معرض الصور والميديا </h2>
+					<p style="color: #707070;"> معرض الصور الخاص بالجارحي كل ما تريد أن تراه من ميديا الايفينتات والفعاليات الهامة وبعض الصور والذكريات الهامة المحفورة بتاريخ محمد الجارحي يمكنك رؤية المزيد من الصور الان على الموقع الرسمي للجارحي   </p>
+				</div>
+			</div>
+      <!-- This is media Section  -->
+      <div class="row media-section1 ">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">	
+          <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 media-imgs-s1">
+              <img class="media-img media-img1" src="{% static 'images/Media/1.jpg' %}" >
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 media-imgs-s2">
+              <img class="media-img media-img2" src="{% static 'images/Media/2.jpg' %}"  >
+              <img class="media-img media-img3" src="{% static 'images/Media/2.1.jpg' %}" >
+            </div>
+
+          </div>	
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 media-imgs-s3">	
+          <img class="media-img media-img4" src="{% static 'images/Media/10.jpg' %}"  >
+        </div>
+      </div>
+      <div class="row media-section2">
+        <div class="col-xl-6 col-lg-6 col-md-12">	
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-12">
+              <img class="media-img media-img5" src="{% static 'images/Media/4.jpg' %}"  >
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-12">
+              <img class="media-img media-img6" src="{% static 'images/Media/5.jpg' %}"  >
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-12">
+              <img class="media-img media-img7" src="{% static 'images/Media/6.jpg' %}"  >
+            </div>
+
+          </div>	
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6">	
+          <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8">
+                <img class="media-img media-img8" src="{% static 'images/Media/7.jpg' %}"  >
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <img class="media-img media-img9" src="{% static 'images/Media/8.jpg' %}"  >
+            </div>
+
+          </div>
+        </div>
+
+        
+      </div>
+      <div class="row media-section3 ">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 media-imgs-s4">	
+          <img class="media-img media-img10" src="{% static 'images/Media/3.jpg' %}"  >
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 media-imgs-s4">	
+          <img class="media-img media-img11" src="{% static 'images/Media/13.jpg' %}"  >
+        </div>
+      </div>
+      <!-- Hide this  -->
+      <div class="row media-section4" id="more">
+        <div class="col-xl-6 col-lg-6 col-md-6">	
+          <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8">
+                <img class="media-img media-img8" src="{% static 'images/Media/12.jpg' %}"  >
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <img class="media-img media-img9" src="{% static 'images/Media/11.jpg' %}"  >
+            </div>
+
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12">	
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-12">
+              <img class="media-img media-img5" src="{% static 'images/Media/10.jpg' %}"  >
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8">
+              <img class="media-img media-img8" src="{% static 'images/Media/7.jpg' %}"  >
+          </div>
+
+          </div>	
+        </div>
+    
+      </div>
+      <div class="row media-section5" id="more2">
+        <div class="col-xl-6 col-lg-6 col-md-6">	
+          <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8">
+                <img class="media-img media-img8" src="{% static 'images/Media/12.jpg' %}"  >
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <img class="media-img media-img9" src="{% static 'images/Media/11.jpg' %}"  >
+            </div>
+
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12">	
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-12">
+              <img class="media-img media-img5" src="{% static 'images/Media/10.jpg' %}"  >
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8">
+              <img class="media-img media-img8" src="{% static 'images/Media/7.jpg' %}"  >
+          </div>
+
+          </div>	
+        </div>
+    
+      </div> 
+
+      <!-- Button Show Medi More cases from El GK-->
+      <div class="col-md-12 text-center mt-5">
+        <a id="myBtn" href="#" onclick="myFunction();return false;"  class="btn btn-media-more px-5">مشاهدة المزيد  </a>
+      </div>
+    </div>
+  </section>
+<!-- End Media  -->
+{%endblock%}

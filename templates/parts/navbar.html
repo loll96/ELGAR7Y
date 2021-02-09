@@ -1,0 +1,33 @@
+{%load static%}
+<nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light garhy-nav-new" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'garhy:index'%}"><img src="{% static 'images/logo.png' %}" alt="MGLogo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> 
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav garhy-navbar-nav ">
+          <li class="nav-item {% if title == '' %}active{% endif %}"><a href="{% url 'garhy:index'%}" class="nav-link">الرئيسية</a></li>
+          <li class="nav-item {% if title == 'عن' %}active{% endif %}"><a href="{% url 'garhy:about'%}" class="nav-link">عن الجارحي</a></li>
+          <li class="nav-item {% if title == 'الميديا والاخبار' or title == 'الاخبار' %}active{% endif %}"><a href="{% url 'garhy:mediaandnews'%}" class="nav-link">الميديا والأخبار</a></li>
+          <li class="nav-item {% if title == 'الجوائز' %}active{% endif %}"><a href="{% url 'garhy:awards'%}" class="nav-link">الجوائز  </a></li>
+          <li class="nav-item {% if title == 'المسؤلية الاجتماعية' %}active{% endif %}"><a href="{% url 'garhy:socialResponsibility'%}" class="nav-link">المسؤولية الاجتماعية </a></li>
+          <li class="nav-item {% if title == 'تواصل معي' %}active{% endif %}"><a href="{% url 'garhy:contact'%}" class="nav-link">تواصل معي</a></li>
+          <!-- Top Search Area -->
+
+
+          <!-- Here will be other assets  -->
+          <ul class="ftco-header-search list-unstyled float-md-left float-lft p-0">
+          
+          <li class="ftco-animate"><a href="contact-en.html"><span class="icon-translate"></span></a></li>
+          </ul>
+          <ul class="ftco-header-social list-unstyled float-md-left float-lft p-0 ">
+            <!-- <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li> -->
+            <li class="ftco-animate"><a href="https://www.instagram.com/m_g_elgarhy" target="_blank"><span class="icon-instagram"></span></a></li>
+            <li class="ftco-animate"><a href=" https://www.facebook.com/MohamedElGarhyOfficial/" target="_blank"><span class="icon-facebook"></span></a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>

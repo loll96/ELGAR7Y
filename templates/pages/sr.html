@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{%load static%}
+{%block body%} 
+ 
+        <!-- Start  BreadCrumbs For All Pages Change Image  -->
+    
+        <section class="hero-wrap breadcrumb-sr hero-wrap-2" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+              <!-- <div class="col-md-8 ftco-animate text-center mydesc-text-overlay-mb">
+                <h3 class="sub-title">المسؤولية الإجتماعية   </h3>
+                <h1 class="mb-3 bread">دور الجارحي المجتمعي والانساني     </h1>
+                <p class="desc mt-4">  ولم يغفل الجارحي مسئوليته المجتمعية ودوره الإنساني، فأطلق العديد من المبادرات لتخفيف العبء عن المواطن المصري </p>
+              </div> -->
+            </div>
+          </div>
+        </section>
+    
+      <!-- End  BreadCrumbs For All Pages Change Image  -->
+
+      <!-- Start  All Cases  -->
+   	
+   	<section class="ftco-section all-cases">
+    	<div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center heading-section ftco-animate">
+            <span class="subheading">مبادرات الجارحي </span>
+            <h2 class="mb-4">مبادرات ومساهمات الجارحي المجتمعية  </h2>
+            <p style="color: #707070;">   أطلق الجارحي العديد من المبادرات لتخفيف العبء عن المواطن المصري كمبادرة دعم العمالة غير المنتظمة وتحدي الخير خلال جائحة كورونا، ودعم العديد من المؤسسات الصحية لتقف وتستمر في عطائها كمستشفى ٥٧٣٥٧ وأهل مصر لعلاج الحروق والمعهد القومي للأورام فضلًا عن العديد من الجمعيات الخيرية ومؤسسات المجتمع المدني كالاورومان ومصر الخير. فضلاً عن المساهمة بدفع قيمة التصالح في مخالفات البناء لعدد ألف أسرة من الأسر الأكثر احتياجاً بمحافظة الفيوم.</p>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 ftco-animate">
+            {%for sr in srs|slice:'9'%}
+        		<div class="case img d-flex align-items-center justify-content-center srhide sr{{sr.category.id}}" style="background-image: url({{sr.img.url}});">
+              <div class="text text-center">
+                <h3><a href="{% url 'garhy:srdetails' sr.id%}">{{sr.title}} </a></h3>
+                <span>{{sr.time|date:"F d, Y"}}</span>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27" style="direction: ltr;">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+      <!-- End  All Cases  -->
+
+
+
+
+{%endblock%}
